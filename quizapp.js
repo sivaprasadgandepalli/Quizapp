@@ -24,7 +24,7 @@ var score=0;
 var cq=0;
 var qb1=document.getElementById('qbox');
 var op=document.querySelectorAll('li');
-var i=0;
+var i=1;
 var rst=document.getElementById('rest');
 var radio=document.querySelectorAll('input');
 var btn1=document.getElementById('btn');
@@ -42,11 +42,11 @@ function countScore(e){
 }
 function display()
 {
-	qb1.innerHTML=questions[i].Q;
-	op[0].innerHTML=questions[i].op1;
-	op[1].innerHTML=questions[i].op2;
-	op[2].innerHTML=questions[i].op3;
-	op[3].innerHTML=questions[i].op4;
+	qb1.innerHTML=questions[0].Q;
+	op[0].innerHTML=questions[0].op1;
+	op[1].innerHTML=questions[0].op2;
+	op[2].innerHTML=questions[0].op3;
+	op[3].innerHTML=questions[0].op4;
 }
 function next()
 {

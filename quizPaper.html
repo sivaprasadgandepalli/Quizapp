@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Quiz Question paper</title>
+	<style type="text/css">
+		#qp{
+			max-width:500px ;
+			max-height: 500px;
+			background: navy;
+			color: whitesmoke;
+			margin-left: auto;
+			margin-right:auto ;
+			padding: 20px;
+		}
+		h2{
+			text-align: center;
+			font-size: 30px;
+			text-decoration: underline;
+		}
+		ul{
+			list-style-type: none;
+			position: relative;
+			left: -10px;
+		}
+		ul li{
+			padding: 5px;
+		}
+		.button{
+			background: lightpink;
+			font-size:20px;
+			left: 10px;
+			border-radius: 10px;
+		}
+		.spl{
+			display: flex;
+			flex-direction: row;
+		}
+		#rest{
+			background: lightpink;
+			font-size:20px;
+			border-radius: 10px;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+<body onload="display()">
+	<div id="qp">
+		<h2>Quiz</h2>
+		<div id="showcase">
+			<div id="qbox"></div>
+			<ul>
+				<div class="spl">
+					<input type="radio" onclick="countScore(0)">
+					<li></li>
+				</div>
+				<div class="spl">
+					<input type="radio" onclick="countScore(1)">
+					<li></li>
+				</div>
+				<div class="spl">
+					<input type="radio" onclick="countScore(2)">
+					<li></li>
+				</div>
+				<div class="spl">
+					<input type="radio" onclick="countScore(3)">
+					<li></li>
+				</div>
+			</ul>
+		</div>
+		<button onclick="next()" class="button" id="btn">submit</button>
+		<center>
+			<div class="sbd" style=" display: none; " id="result">
+			<h3 id="scr">0</h3>
+			<p id="ca">0</p>
+			<button style=" display: none;" id="rest" onclick="restart()">Restart</button>
+		</div>
+		</center>
+	</div>
+	<script type="text/javascript" src="quizapp.js"></script>
+</body>
+</html>

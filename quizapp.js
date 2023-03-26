@@ -28,9 +28,10 @@ var i=1;
 var rst=document.getElementById('rest');
 var radio=document.querySelectorAll('input');
 var btn1=document.getElementById('btn');
-var a=document.getElementById('result');
-var b=document.getElementById('scr');
-var c=document.getElementById('ca');
+var fc=document.getElementById('scr');
+var scbd=document.getElementById('result');
+var dsq=document.getElementById('ca');
+var show=document.getElementById('showcase');
 var radId=0;
 function countScore(e){
 	radId=e;
@@ -50,37 +51,38 @@ function display()
 }
 function next()
 {
-	if(i<=3)
+	if(i<4)
 	{
 		qb1.innerHTML=questions[i].Q;
 		op[0].innerHTML=questions[i].op1;
 		op[1].innerHTML=questions[i].op2;
 		op[2].innerHTML=questions[i].op3;
 		op[3].innerHTML=questions[i].op4;
-		if(i==3)btn1.style.display="none";
 		radio[radId].checked=false;
 		i++;
 	}
-	if(i==4)
+	else
 	{
 		radio[radId].checked=false;
+		btn1.style.display="none";
 		displayScore();
 	}
-
 }
 function displayScore(){
-	b.innerHTML="Your total score is: "+score;
-	c.innerHTML="Correct answers:"+cq+" <br>"+"Wrong answers:"+(4-cq);
-	let d=document.getElementById('showcase').style.display="none";
-	a.style.display="inherit";
-	rst.style.display="inherit";
+	show.style.display="none";
+	fc.innerHTML="Your total score is :"+score;
+	dsq.innerHTML="Correct answers: "+cq+"<br>"+"Wrong answers: "+(4-cq);
+	scbd.style.display="block";
+	rst.style.display="block";
 }
 function restart()
 {
-	i=0;
+	i=1;
+	scbd.style.display="none";
+	show.style.display="block";
 	rst.style.display="none";
-	let d=document.getElementById('showcase').style.display="block";
-	a.style.display="none";
-	btn1.style.display="inherit";
+	btn1.style.display="block";
+	score=0;
+	cq=0;
 	display();
 }

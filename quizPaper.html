@@ -7,7 +7,7 @@
 	<style type="text/css">
 		#qp{
 			max-width:500px ;
-			max-height: 500px;
+			max-height: 400px;
 			background: navy;
 			color: whitesmoke;
 			margin-left: auto;
@@ -27,21 +27,18 @@
 		ul li{
 			padding: 5px;
 		}
-		.button{
+		button{
+			position:relative;
 			background: lightpink;
-			font-size:20px;
+			font-size:15px;
 			left: 10px;
-			border-radius: 10px;
+		}
+		a{
+			text-decoration: none;
 		}
 		.spl{
 			display: flex;
 			flex-direction: row;
-		}
-		#rest{
-			background: lightpink;
-			font-size:20px;
-			border-radius: 10px;
-			margin-bottom: 20px;
 		}
 	</style>
 </head>
@@ -68,12 +65,12 @@
 					<li></li>
 				</div>
 			</ul>
+			<button onclick="next()" class="button" id="btn">submit</button>
 		</div>
-		<button onclick="next()" class="button" id="btn">submit</button>
 		<center>
-			<div class="sbd" style=" display: none; " id="result">
-			<h3 id="scr">0</h3>
-			<p id="ca">0</p>
+			<div id="result">
+			<h3 id="scr"></h3>
+			<p id="ca"></p>
 			<button style=" display: none;" id="rest" onclick="restart()">Restart</button>
 		</div>
 		</center>
